@@ -182,7 +182,7 @@ export default function WhyJoinUCCI() {
   return (
     <section 
       id="why-join" 
-      className="relative py-20 bg-brand-sapphire/40 border-y border-brand-gold/15 overflow-hidden"
+      className="relative py-16 sm:py-20 bg-brand-sapphire/40 border-y border-brand-gold/15 overflow-hidden scroll-mt-24"
       aria-labelledby="why-join-heading"
     >
       {/* Decorative Ornate Corner Filigree (Top-Left) */}
@@ -269,16 +269,17 @@ export default function WhyJoinUCCI() {
           </div>
         </div>
 
-        {/* 10 Points Grid: 5 columns on desktop, responsive on tablets & mobile */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-5">
+        {/* 10 Points Grid: 1 col mobile → 2 sm → 3 lg → 5 xl (5+5), equal-height cards */}
+        <ol className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 sm:gap-5 list-none m-0 p-0 items-stretch">
           {BENEFIT_POINTS.map((item) => {
             const IconComponent = item.icon
             const imageSrc = useHdImages ? item.hdImage : item.flyerImage
+            const num = String(item.id).padStart(2, '0')
 
             return (
-              <div
+              <li
                 key={item.id}
-                className="group relative flex flex-col rounded-2xl bg-gradient-to-b from-[#131d3d] to-[#0a1128] border border-brand-gold/35 hover:border-brand-gold p-1.5 shadow-lg shadow-black/40 hover:shadow-[0_0_25px_rgba(212,175,55,0.22)] hover:-translate-y-1 transition-all duration-300"
+                className="group relative flex flex-col rounded-2xl bg-gradient-to-b from-[#131d3d] to-[#0a1128] border border-brand-gold/35 hover:border-brand-gold p-1.5 shadow-lg shadow-black/40 hover:shadow-[0_0_25px_rgba(212,175,55,0.22)] hover:-translate-y-1 transition-all duration-300 h-full"
               >
                 {/* Card Top Image Container */}
                 <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden bg-brand-navy/90 border border-brand-gold/15">
@@ -286,11 +287,18 @@ export default function WhyJoinUCCI() {
                     src={imageSrc}
                     alt={item.title}
                     fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 33vw, 20vw"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 20vw"
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   {/* Subtle darkening vignette overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0a1128]/70 via-transparent to-black/20" />
+                  {/* Number badge */}
+                  <span
+                    aria-hidden="true"
+                    className="absolute top-2 left-2 min-w-[2rem] h-8 px-2 rounded-full bg-brand-navy/85 border border-brand-gold/50 text-brand-gold font-display font-bold text-xs flex items-center justify-center backdrop-blur-sm"
+                  >
+                    {num}
+                  </span>
                 </div>
 
                 {/* Overlapping Floating Circular Badge */}
@@ -298,19 +306,20 @@ export default function WhyJoinUCCI() {
                   <IconComponent className="w-5 h-5" />
                 </div>
 
-                {/* Card Body with Title and Description */}
+                {/* Card Body with Number, Title and Description */}
                 <div className="pt-3 pb-4 px-2 sm:px-3 text-center flex flex-col flex-grow">
+                  <span className="sr-only">Benefit {num}: </span>
                   <h3 className="font-display font-bold text-sm sm:text-base text-brand-champagne mb-2 group-hover:text-brand-gold transition-colors leading-snug">
-                    {item.title}
+                    <span className="text-brand-gold/70 font-semibold mr-1">{num}.</span> {item.title}
                   </h3>
-                  <p className="text-xs text-brand-silver/85 leading-relaxed flex-grow">
+                  <p className="text-xs sm:text-[13px] text-brand-silver/85 leading-relaxed flex-grow">
                     {item.description}
                   </p>
                 </div>
-              </div>
+              </li>
             )
           })}
-        </div>
+        </ol>
 
         {/* CTA underneath the grid */}
         <div className="mt-12 text-center">
