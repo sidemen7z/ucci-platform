@@ -135,7 +135,7 @@ export function AppointmentCalendar({ chapterId, onSlotSelect, selectedSlotId }:
       <div className="text-center py-8 text-brand-silver/60">
         <Clock className="w-10 h-10 mx-auto mb-2 text-brand-silver/30" />
         <p>No available appointment slots at this time.</p>
-        <p className="text-sm mt-1">Please check back later or contact us directly at <a href="tel:8600241900" className="text-brand-gold">8600241900</a>.</p>
+        <p className="text-sm mt-1">Please check back later or contact us directly at <a href="tel:+918600241900" className="text-brand-gold">+91-86002 41900</a>.</p>
       </div>
     )
   }

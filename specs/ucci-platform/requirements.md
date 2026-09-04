@@ -19,7 +19,7 @@ The UCCI Platform is an SEO-optimized digital brochure, role-based admin panel, 
 - **Member_Profile_Application**: The complete onboarding form containing business details required for directory listing
 - **Image_Optimizer**: The client-side utility that converts and compresses images to WebP format under 250KB
 - **Admin_Curated_Onboarding**: The workflow where Super_Admin creates base member accounts before members can populate profile details
-- **Membership_Fee_Paid**: A boolean field tracking offline payment of the ₹10,000 recurring membership fee
+- **Membership_Fee_Paid**: A boolean field tracking offline payment of the recurring membership fee (Form 1: Rs.6,000 Membership fee + Rs.6,000 Venue fee, offline/manual tracking)
 - **Appointment_Webhook**: The background API endpoint that processes booking confirmation payloads from scheduling systems
 
 ## Requirements
@@ -57,7 +57,7 @@ The UCCI Platform is an SEO-optimized digital brochure, role-based admin panel, 
 **Phase 3: The Vetting Call & Payment Gate**
 
 16. WHEN a Chapter_Admin or Super_Admin views pending applications for their assigned chapter, THE UCCI_System SHALL display all profiles with status 'pending' including scheduled appointment timestamps
-17. WHEN an administrator conducts the vetting call and receives the ₹10,000 offline registration fee, THE administrator SHALL toggle membership_fee_paid to true in the admin console
+17. WHEN an administrator conducts the vetting call and receives the offline registration fee (Rs.6,000 Membership + Rs.6,000 Venue), THE administrator SHALL toggle membership_fee_paid to true in the admin console
 18. WHEN an administrator approves an application, THE UCCI_System SHALL require that membership_fee_paid is true before allowing status change to 'approved'
 19. WHEN an administrator sets a profile status to 'approved', THE UCCI_System SHALL include the member in public directories, search results, and sitemaps immediately
 20. WHEN an administrator rejects an application, THE UCCI_System SHALL archive the profile record and remove it from pending queues
@@ -222,8 +222,8 @@ The UCCI Platform is an SEO-optimized digital brochure, role-based admin panel, 
 #### Acceptance Criteria
 
 1. WHEN a Public_Visitor accesses the Contact Us page, THE UCCI_System SHALL display a form with fields for name, email, subject, and message
-2. WHEN the Contact Us page renders, THE UCCI_System SHALL display the official UCCI address "Office No 202, Commercial Building 4 HM Royal Next To Talab Masjid Kondhwa Pune - 411048"
-3. WHEN the Contact Us page renders, THE UCCI_System SHALL display the primary contact phone number "8600241900"
+2. WHEN the Contact Us page renders, THE UCCI_System SHALL display the official UCCI address "Office No.202, Second Floor, Commercial Building 4, HM Royal Society, Opp. Ranka Jewellers, Talab, Kondhwa, Pune – 411048" (Form 1 Sept 2026)
+3. WHEN the Contact Us page renders, THE UCCI_System SHALL display the primary contact phone number "+91-86002 41900" with WhatsApp link, email "ucci0121@gmail.com", and Instagram "@ucci_muslimbizclub"
 4. WHEN a visitor submits the Contact Us form, THE UCCI_System SHALL create a contact_inquiries record
 5. WHEN a contact inquiry is submitted, THE UCCI_System SHALL validate that name, email, and message fields are not empty
 6. WHEN a Super_Admin accesses the admin dashboard, THE UCCI_System SHALL display all contact inquiries with submission timestamps

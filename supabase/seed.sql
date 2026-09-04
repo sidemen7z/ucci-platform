@@ -9,6 +9,15 @@ INSERT INTO areas (id, name, slug) VALUES
   ('a1000000-0000-0000-0000-000000000002', 'PCMC',  'pcmc');
 
 -- ─── Chapters ─────────────────────────────────────────────────────────────────
+-- Form 1 (Sept 2026) locality coverage:
+-- Pune East: Kharadi, Wadgaosheri, Mundhwa, Hadapsar
+-- Pune West: Kothrud, Aundh, Baner, Pashan, Bavdhan, Warje
+-- Pune North: Viman Nagar, Lohegaon, Dhanori, Vishrantwadi, Wagholi
+-- Pune South: Kondhwa, Mohammadwadi, Undri, Pisoli, Wanwadi, Katraj, Bibvewadi, Handewadi
+-- Pune Central: Peth areas, Camp, Swargate, Koregaon Park, Ghorpadi
+-- PCMC East: Chikali, Bhosari, Alandi, Moshi
+-- PCMC West: Wakad, Hinjewadi, Ravet, Nigdi, Dehu Road
+-- See lib/data/chapter-localities.ts for UI display of this coverage.
 -- Pune chapters (5)
 INSERT INTO chapters (id, name, slug, area_id) VALUES
   ('c1000000-0000-0000-0000-000000000001', 'East',    'east',    'a1000000-0000-0000-0000-000000000001'),

@@ -357,8 +357,8 @@ This implementation plan breaks down the UCCI Platform build into incremental, t
 - [ ] 23. Contact Us Page
   - Create `/app/contact/page.tsx` as Server Component
   - Display form with fields: name, email, subject, message
-  - Display official UCCI address: "Office No 202, Commercial Building 4 HM Royal Next To Talab Masjid Kondhwa Pune - 411048"
-  - Display primary contact phone: "8600241900"
+  - Display official UCCI address (Form 1 Sept 2026): "Office No.202, Second Floor, Commercial Building 4, HM Royal Society, Opp. Ranka Jewellers, Talab, Kondhwa, Pune – 411048"
+  - Display primary contact phone/WhatsApp: "+91-86002 41900", email "ucci0121@gmail.com", Instagram "@ucci_muslimbizclub"
   - Create Server Action to insert contact_inquiries record
   - Validate required fields (name, email, message) and email format
   - Display contact inquiries in Super_Admin dashboard

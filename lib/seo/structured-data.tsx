@@ -7,21 +7,24 @@ export function buildOrganizationSchema() {
   return {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: 'UCCI - United Chamber of Commerce India',
+    name: 'UCCI - UNITED CHAMBER OF COMMERCE & INDUSTRIES',
+    alternateName: 'UCCI',
+    slogan: 'Connect | Collaborate | Grow',
     url: absoluteUrl('/'),
     logo: absoluteUrl('/images/ucci-logo.png'),
+    email: 'ucci0121@gmail.com',
     address: {
       '@type': 'PostalAddress',
-      streetAddress: 'Office No 202, Commercial Building 4 HM Royal, Next To Talab Masjid',
-      addressLocality: 'Kondhwa',
-      addressRegion: 'Pune',
+      streetAddress: 'Office No.202, Second Floor, Commercial Building 4, HM Royal Society, Opp. Ranka Jewellers, Talab, Kondhwa',
+      addressLocality: 'Pune',
+      addressRegion: 'Maharashtra',
       postalCode: '411048',
       addressCountry: 'IN',
     },
-    telephone: '+918600241900, +919552319748, +918485878785, +919923309468',
+    telephone: '+91-86002 41900',
     description:
-      'UCCI is an elite business networking organization connecting professionals through exclusive referral chapters in Pune and PCMC.',
-    sameAs: [],
+      'UCCI — UNITED CHAMBER OF COMMERCE & INDUSTRIES — Connect | Collaborate | Grow. A trusted, collaborative business networking organization connecting professionals through exclusive referral chapters in Pune and PCMC.',
+    sameAs: ['https://instagram.com/ucci_muslimbizclub'],
   }
 }
 

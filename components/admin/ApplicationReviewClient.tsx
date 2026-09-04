@@ -126,7 +126,7 @@ export function ApplicationReviewClient({ applications, adminId }: ApplicationRe
               }`}
             >
               {loading[app.id] === 'fee' ? <Loader2 className="w-4 h-4 animate-spin" /> : <DollarSign className="w-4 h-4" />}
-              {app.membership_fee_paid ? '₹10,000 Paid ✓' : 'Mark Fee Paid'}
+              {app.membership_fee_paid ? 'Rs.12,000 Paid ✓ (6k Membership + 6k Venue)' : 'Mark Fee Paid'}
             </button>
 
             <button

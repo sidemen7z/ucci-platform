@@ -2,6 +2,7 @@ import { createServerSupabaseClient } from '@/lib/supabase/server'
 import { HeroCarousel } from '@/components/home/HeroCarousel'
 import { GlobalSearch } from '@/components/search/GlobalSearch'
 import { JsonLd, buildOrganizationSchema, buildWebSiteSchema } from '@/lib/seo/structured-data'
+import { getChapterLocality } from '@/lib/data/chapter-localities'
 import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowRight, Users, MapPin, Star, TrendingUp } from 'lucide-react'
@@ -155,12 +156,18 @@ export default async function HomePage() {
                       <Link
                         key={chapter.id}
                         href={`/chapters/${area.slug}-${chapter.slug}`}
+                        title={getChapterLocality(area.slug, chapter.slug)?.coverage ?? chapter.name}
                         className="bg-brand-navy/50 rounded-lg px-4 py-3 text-sm text-brand-silver hover:text-brand-gold hover:bg-brand-navy transition-colors text-center border border-brand-sapphire hover:border-brand-gold/40"
                       >
                         {chapter.name}
                       </Link>
                     ))}
                   </div>
+                  <p className="text-brand-silver/50 text-xs mt-4 leading-relaxed">
+                    {area.slug === 'pune'
+                      ? 'East: Kharadi · Hadapsar | West: Baner · Kothrud | North: Viman Nagar · Wagholi | South: Kondhwa · Katraj | Central: Camp · Peth areas'
+                      : 'East: Bhosari · Moshi | West: Hinjewadi · Wakad · Nigdi'}
+                  </p>
                 </div>
               )
             })}

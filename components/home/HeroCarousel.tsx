@@ -49,7 +49,7 @@ export function HeroCarousel({ slides }: HeroCarouselProps) {
             Welcome to <span className="text-gradient-gold">UCCI</span>
           </h1>
           <p className="text-brand-silver text-xl max-w-2xl mx-auto">
-            United Chamber of Commerce India — Elite Business Networking
+            UNITED CHAMBER OF COMMERCE &amp; INDUSTRIES — Connect | Collaborate | Grow
           </p>
         </div>
       </div>

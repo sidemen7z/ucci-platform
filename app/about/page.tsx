@@ -1,10 +1,11 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
+import WhyJoinUCCI from '@/components/about/WhyJoinUCCI'
 
 export const metadata: Metadata = {
   title: 'About UCCI | Our Story & How It Works',
   description:
-    'Learn about UCCI — United Chamber of Commerce India. Discover our story, our BNI-inspired networking model, and how our exclusive chapter system helps professionals grow.',
+    'Learn about UCCI — UNITED CHAMBER OF COMMERCE & INDUSTRIES (Connect | Collaborate | Grow). Discover our story, our trusted referral networking model, and how our exclusive chapter system helps professionals grow.',
 }
 
 const FOUNDERS = [
@@ -12,8 +13,8 @@ const FOUNDERS = [
     image: '/1.png',
     quote:
       'UCCI is more than a business networking platform—it’s a movement to empower, connect, and strengthen the Muslim business community.',
-    name: 'MOHAMMED PASHA',
-    title: 'Founder & President, UCCI',
+    name: 'MOHAMMAD PASHA',
+    title: 'Founder President, UCCI',
     // Tall portrait, head near top — anchor crop to face, trim torso
     position: '50% 8%',
   },
@@ -21,7 +22,7 @@ const FOUNDERS = [
     image: '/2.png',
     quote:
       'At UCCI, we strengthen bonds and empower success. Fostering unity, trust, and growth within the Muslim business community. Together, we build stronger businesses and a brighter future.',
-    name: 'SAYEED NAMDAR',
+    name: 'CMA SAYEED INAMDAR',
     title: 'Founder Vice President',
     position: '50% 20%',
   },
@@ -29,7 +30,7 @@ const FOUNDERS = [
     image: '/3.png',
     quote:
       'At UCCI, we believe in growing together—not just individual success, but community success. ‘Together, We Grow.’ Success is better when shared.',
-    name: 'HAMEED SHAIKH',
+    name: 'ABDUL HAMEED SHAIKH',
     title: 'Founder Vice President',
     // Tall portrait, head near top — anchor crop to face, trim torso
     position: '50% 8%',
@@ -38,7 +39,7 @@ const FOUNDERS = [
     image: '/4.png',
     quote:
       'UCCI brings Muslim entrepreneurs and professionals together to create meaningful business relationships, exchange referrals, and foster collaborations.',
-    name: 'ABOOBAKAR MEMON',
+    name: 'AR. ABOOBAKAR MEMON',
     title: 'Founder Vice President',
     // Head sits slightly lower — anchor just above center
     position: '50% 12%',
@@ -55,7 +56,7 @@ export default function AboutPage() {
             About <span className="text-gradient-gold">UCCI</span>
           </h1>
           <p className="section-subtitle max-w-2xl mx-auto">
-            United Chamber of Commerce India — Where Elite Professionals Network
+            UNITED CHAMBER OF COMMERCE &amp; INDUSTRIES — Connect | Collaborate | Grow
           </p>
         </div>
       </div>
@@ -66,23 +67,32 @@ export default function AboutPage() {
           <h2 id="our-story-heading" className="font-display text-3xl font-bold text-brand-gold mb-6">Our Story</h2>
           <div className="space-y-4 text-brand-silver leading-relaxed">
             <p>
-              UCCI — United Chamber of Commerce India — was founded with a singular vision: to create a
-              structured, high-trust business networking ecosystem for professionals in Pune and the PCMC region.
-              Inspired by the proven BNI (Business Network International) model, UCCI brings together one
-              professional per business category per chapter, ensuring zero internal competition and maximum
-              referral quality.
+              UCCI aims to build a trusted, collaborative, and high-impact business community where entrepreneurs,
+              professionals, business owners, and leaders connect with purpose, create meaningful opportunities,
+              share knowledge, and grow together.
             </p>
             <p>
-              Our network operates on the principle of <span className="text-brand-champagne font-medium">Givers Gain®</span> — 
-              when you help others grow their businesses, your own business grows in return. Each UCCI member
-              commits to actively referring business to fellow chapter members, creating a powerful, self-sustaining
-              referral engine.
+              The group aims to become more than a platform for exchanging business cards or generating referrals.
+              It seeks to create a strong ecosystem of trusted relationships in which members actively support one
+              another, collaborate on opportunities, exchange expertise, develop strategic partnerships, and
+              contribute to the growth of the wider business community.
+            </p>
+            <p>
+              Our vision is to foster a culture where{' '}
+              <span className="text-brand-champagne font-medium">“business through relationships”</span> becomes a
+              shared philosophy — where trust precedes transactions, collaboration creates value, and every member
+              has the opportunity to both give and receive.
+            </p>
+            <p>
+              Over time, the group aspires to establish itself as a respected network known for the quality of its
+              members, the strength of its relationships, the opportunities it creates, and the measurable value it
+              delivers to its members and the community.
             </p>
             <p>
               From our roots in Pune&apos;s bustling business community, UCCI has expanded to serve professionals
               across 7 chapters in two geographic areas: Pune (East, West, North, South, Central) and PCMC
               (East, West). Each chapter maintains a carefully curated membership of vetted, verified professionals
-              who are committed to structured networking and business growth.
+              — one member per business category — who are committed to structured networking and business growth.
             </p>
             <p>
               Our strict vetting process — including personal interviews, category exclusivity checks, and
@@ -92,6 +102,9 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      {/* Why Join UCCI */}
+      <WhyJoinUCCI />
 
       {/* Founders */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16" aria-labelledby="founders-heading">
@@ -180,7 +193,7 @@ export default function AboutPage() {
             {
               step: '03',
               title: 'Membership Fee & Approval',
-              desc: 'Pay the ₹10,000 annual membership fee (offline) to confirm your commitment. Once confirmed, your admin will approve your application and activate your profile.',
+              desc: 'Pay the Rs.6,000 Membership fee + Rs.6,000 Venue fee (offline) to confirm your commitment. Once confirmed, your admin will approve your application and activate your profile.',
             },
             {
               step: '04',

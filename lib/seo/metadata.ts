@@ -2,9 +2,10 @@ import type { Metadata } from 'next'
 import { absoluteUrl } from '@/lib/utils/absoluteUrl'
 import type { Profile, Chapter, Category, Area } from '@/lib/types/database'
 
-const SITE_NAME = 'UCCI - United Chamber of Commerce India'
+const SITE_NAME = 'UCCI - UNITED CHAMBER OF COMMERCE & INDUSTRIES'
+const TAGLINE = 'Connect | Collaborate | Grow'
 const DEFAULT_DESCRIPTION =
-  'UCCI is an elite business networking organization connecting professionals across Pune and PCMC through structured referral chapters.'
+  'UCCI — UNITED CHAMBER OF COMMERCE & INDUSTRIES — Connect | Collaborate | Grow. An elite business networking organization connecting professionals across Pune and PCMC through structured referral chapters.'
 
 // ─── Site-level Metadata ──────────────────────────────────────────────────────
 
@@ -133,7 +134,7 @@ export function buildCategoryMetadata(category: Category, memberCount: number): 
 export function buildContactMetadata(): Metadata {
   return {
     title: 'Contact Us',
-    description: 'Get in touch with UCCI. We are located at Office No 202, Commercial Building 4 HM Royal, Kondhwa, Pune - 411048. Call: 8600241900, 9552319748, 8485878785, 9923309468.',
+    description: 'Get in touch with UCCI. We are located at Office No.202, Second Floor, Commercial Building 4, HM Royal Society, Opp. Ranka Jewellers, Talab, Kondhwa, Pune – 411048. Call/WhatsApp: +91-86002 41900. Email: ucci0121@gmail.com.',
     alternates: { canonical: absoluteUrl('/contact') },
   }
 }

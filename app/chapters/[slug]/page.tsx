@@ -1,9 +1,10 @@
 import { createServerSupabaseClient } from '@/lib/supabase/server'
 import { notFound } from 'next/navigation'
 import { buildChapterMetadata } from '@/lib/seo/metadata'
+import { getChapterLocality } from '@/lib/data/chapter-localities'
 import Link from 'next/link'
 import Image from 'next/image'
-import { User, ArrowLeft, Tag } from 'lucide-react'
+import { User, ArrowLeft, Tag, MapPin } from 'lucide-react'
 import type { Chapter, Area } from '@/lib/types/database'
 import type { Metadata } from 'next'
 
@@ -65,6 +66,8 @@ export default async function ChapterPage({ params }: Props) {
 
   if (!chapter) notFound()
 
+  const locality = getChapterLocality(areas.slug, chapter.slug)
+
   // Fetch approved members in this chapter
   const { data: members } = await supabase
     .from('profiles')
@@ -85,6 +88,12 @@ export default async function ChapterPage({ params }: Props) {
             UCCI <span className="text-gradient-gold">{chapter.name}</span> Chapter
           </h1>
           <p className="section-subtitle">{areas.name} Region · {members?.length ?? 0} Verified Members</p>
+          {locality && (
+            <p className="mt-3 inline-flex items-start gap-2 text-brand-silver/80 text-sm max-w-2xl">
+              <MapPin className="w-4 h-4 text-brand-gold mt-0.5 flex-shrink-0" />
+              <span>{locality.coverage}</span>
+            </p>
+          )}
         </div>
       </div>
 
